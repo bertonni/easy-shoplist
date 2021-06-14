@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import AddItem from "./components/AddItem";
+import ListItems from "./components/ListItems";
+import Home from "./components/Home";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Link,
+  Route,
+} from 'react-router-dom';
+import { ListProvider } from "./contexts/ListContext";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <ListProvider>
+
+        <div>
+          <nav>
+            <ul className="flex items-center py-2 justify-center gap-4">
+              <li>
+                <Link className="font-semibold" to="/">Home</Link>
+              </li>
+              <li>
+                <Link className="font-semibold" to="/add">Add Item</Link>
+              </li>
+              <li>
+                <Link className="font-semibold" to="/list">List Items</Link>
+              </li>
+            </ul>
+          </nav>
+
+          <Switch>
+            <Route path="/add">
+              <AddItem />
+            </Route>
+            <Route path="/list">
+              <h1 className="text-xl my-3 text-center">List Items</h1>
+              <ListItems />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+      </ListProvider>
+    </Router>
   );
 }
-
-export default App;
