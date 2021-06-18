@@ -34,6 +34,12 @@ module.exports = {
         '116': '29rem',
         '120': '30rem',
         '124': '31rem',
+      },
+      fontFamily: {
+        // 'source-pro': ['Source Sans Pro', 'sans-serif'],
+        'montserrat': ['Montserrat', 'sans-serif'],
+        // 'gyre': ['Gyre', 'sans-serif'],
+        // 'duran': ['Duran', 'sans-serif'],
       }
     },
   },

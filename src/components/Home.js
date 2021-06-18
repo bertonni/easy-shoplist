@@ -1,109 +1,70 @@
 // import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/outline";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { ListContext } from "../contexts/ListContext";
 
 export default function Home() {
 
-  const { list, addSubtotal } = useContext(ListContext);
-  const [started, setStarted] = useState(false);
+  const { list, addSubtotal, handleActivePage } = useContext(ListContext);
   const [subtotal, setSubtotal] = useState(getSubtotal());
 
-  const buttonBg = started ? 'bg-red-400' : 'bg-blue-400';
-
-  const toggleStartShopping = () => {
-    setStarted(!started);
-  }
+  useEffect(() => {
+    handleActivePage('home');
+  }, [handleActivePage])
 
   function getSubtotal() {
     let total = 0;
     list.forEach(item => {
-      total += item.subtotal;
+      total += (item.subtotal * item.quantity);
     });
     return total;
   }
 
-  function formatValue(value) {
-    let val;
-    switch(value.length) {
-      case 1:
-        val = `0,0${value}`;
-        break;
-      case 2:
-        val = `0,${value}`;
-        break;
-      case 3:
-        val = `${value[0]},${value[1]}${value[2]}`;
-        break;
-        default:
-        val = `${value[0]}${value[1]},${value[2]}${value[3]}`;
-        break;
-    }
-    
-    return val;
-  }
-
   function calculateSubtotal(e, item) {
-    const value = e.target.value;
+    const value = Number(e.target.value);
     const index = list.findIndex(val => val.description === item.description);
-    if (value.length === 0) return;
-    
-    let onlyNumbers = value;
-    if (value.indexOf(',') !== -1) {
-      const [real, cent] = value.split(',');
-      onlyNumbers = real + cent;
-    }
 
-    const formattedValue = formatValue(onlyNumbers);
-
-    const [real, cents] = formattedValue.split(',');
-
-    const val = Number(real) + Number(cents)/100;
-
-    item.subtotal = val;
+    item.subtotal = value;
     addSubtotal(index, item);
 
     setSubtotal(getSubtotal());
-    e.target.value = formattedValue;
+    e.target.value = value.toFixed(2);
   }
-  
-  return (
-    <nav className="flex flex-col gap-2 items-center justify-center">
-      {/* <h1>Home page</h1> */}
-      <button className={`rounded border-none text-white px-4 py-2
-        ${buttonBg} hover:opacity-80 focus:outline-none mt-6`}
-        onClick={toggleStartShopping}
-      >
-        {started &&
-          <>Finish Shopping</>
-        }
-        {!started &&
-          <>Start Shopping</>
-        }
-      </button>
 
-      {started &&
+  return (
+    <div className="flex flex-col gap-2 items-center justify-center">
+      <h1 className="text-2xl text-gray-700 mb-2 font-medium">Sua Lista</h1>
+      {list.length > 0 &&
         <>
-          <div className="max-h-116 w-full px-4 overflow-auto rounded border-b-4 border-t-4">
+          <div className="max-h-116 overflow-auto rounded w-11/12 border-b-4 border-t-4">
             {list.map((item, index) => {
+              const bg = item.subtotal !== 0 ? "bg-gray-500" : "";
+              const titleColor = item.subtotal !== 0 ? "text-gray-50" : "text-gray-400";
+              const textColor = item.subtotal !== 0 ? "text-gray-100 line-through" : "text-gray-600";
               return (
                 <div key={index} className="flex items-center h-14 gap-2">
-                  <div className="pl-3 flex flex-col border rounded h-full justify-center flex-grow truncate">
+                  <div className={`pl-3 ${bg} flex flex-col border rounded h-full justify-center
+                   flex-grow truncate transition duration-300`}>
                     <div className="flex justify-between">
-                      <span className="text-gray-400 text-sm">{item.category}</span>
-                      <span className="text-gray-400 text-sm pr-2">Qnt</span>
+                      <span className={`${titleColor} text-sm`}>{item.category}</span>
+                      <span className={`${titleColor} text-sm pr-2`}>Qnt</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600 font-medium">{item.description}</span>
-                      <span className="text-gray-600 font-medium pr-2 text-lg">{item.quantity}</span>
+                      <span className={`${textColor} font-medium text-sm overflow-hidden truncate`}>
+                        {item.description}
+                      </span>
+                      <span className={`${textColor} font-medium pr-2`}>{item.quantity}</span>
                     </div>
                   </div>
                   <div className="flex border rounded h-full w-14 items-center flex-row-reverse">
                     <input
-                      type="text"
-                      placeholder="Price"
-                      defaultValue={item.subtotal === 0 ? "" : item.subtotal.toFixed(2).toString().replace('.', ',')}
-                      className="w-full h-full px-2"
+                      type="number"
+                      min={0}
+                      placeholder="R$"
+                      defaultValue={item.subtotal === 0 ? 0.00.toFixed(2) : item.subtotal.toFixed(2)}
+                      className="w-full h-full pl-2 text-sm"
                       onBlur={(e) => calculateSubtotal(e, item)}
+                      onFocus={(e) => e.target.select()}
                     />
                   </div>
                 </div>
@@ -116,6 +77,17 @@ export default function Home() {
           </div>
         </>
       }
-    </nav>
+      {list.length === 0 &&
+        <>
+          <h2 className="text-lg text-gray-700">Sua lista está vazia =(</h2>
+          <Link
+            className={`py-1 px-2 border rounded border-gray-500 text-gray-700`}
+            to="/add"
+          >
+            Adicionar Item
+          </Link>
+        </>
+      }
+    </div>
   )
 }

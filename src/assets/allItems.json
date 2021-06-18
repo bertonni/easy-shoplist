@@ -1,1026 +1,1034 @@
 [
   {
     "description": "Abacate",
-    "category": "Fruits"
+    "category": "Frutas"
   },
   {
     "description": "Abacaxi",
-    "category": "Fruits"
+    "category": "Frutas"
   },
   {
     "description": "Abóbora",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Abobrinha",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Absorvente",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Açafrão",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Acelga",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Acetona",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Achocolatado em pó",
-    "category": "Bread & Bakery"
+    "category": "Pães e Bolos"
   },
   {
     "description": "Achocolatado",
-    "category": "Beverages"
+    "category": "Bebidas"
   },
   {
     "description": "Açúcar",
-    "category": "Grains, Pasta & Sides"
+    "category": "Grãos, Massas e Acomp."
   },
   {
     "description": "Adoçante",
-    "category": "Breakfast & Cereal"
+    "category": "Café da Manhã e Cereais"
   },
   {
     "description": "Agrião",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Água mineral",
-    "category": "Beverages"
+    "category": "Bebidas"
   },
   {
     "description": "Água oxigenada",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Água sanitária",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Aipo",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Álcool em gel",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Álcool",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Alecrim",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Alface",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Algodão",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Alho",
-    "category": "Condiments/Spices & Bake"
+    "category": "Condimentos/Tempêros"
   },
   {
     "description": "Almôndegas",
-    "category": "Canned Goods"
+    "category": "Enlatados"
   },
   {
     "description": "Amaciante",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Ameixa",
-    "category": "Fruits"
+    "category": "Frutas"
   },
   {
     "description": "Antisséptico bucal",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Aparelho de barbear",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Arroz",
-    "category": "Grains, Pasta & Sides"
+    "category": "Grãos, Massas e Acomp."
   },
   {
     "description": "Aspargo",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Atum",
-    "category": "Canned Goods"
+    "category": "Enlatados"
   },
   {
     "description": "Aveia em flocos",
-    "category": "Grains, Pasta & Sides"
+    "category": "Grãos, Massas e Acomp."
   },
   {
     "description": "Azeite",
-    "category": "Condiments/Spices & Bake"
+    "category": "Condimentos/Tempêros"
   },
   {
     "description": "Azeitonas",
-    "category": "Canned Goods"
+    "category": "Enlatados"
   },
   {
     "description": "Banana",
-    "category": "Fruits"
+    "category": "Frutas"
   },
   {
     "description": "Barbeador descartável",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Barras de cereal",
-    "category": "Breakfast & Cereal"
+    "category": "Café da Manhã e Cereais"
   },
   {
     "description": "Batata doce",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Batata inglesa",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Bebida láctea",
-    "category": "Beverages"
+    "category": "Bebidas"
   },
   {
     "description": "Berinjela",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Beterraba",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Bicarbonato de sódio",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Biscoito",
-    "category": "Cookies, Snacks & Candy"
+    "category": "Biscoitos, Lanches e Doces"
   },
   {
     "description": "Biscoito rech. chocolate",
-    "category": "Cookies, Snacks & Candy"
+    "category": "Biscoitos, Lanches e Doces"
   },
   {
     "description": "Biscoito rech. morango",
-    "category": "Cookies, Snacks & Candy"
+    "category": "Biscoitos, Lanches e Doces"
   },
   {
     "description": "Biscoito rech. doce de leite",
-    "category": "Cookies, Snacks & Candy"
+    "category": "Biscoitos, Lanches e Doces"
   },
   {
     "description": "Biscoito amant. leite",
-    "category": "Cookies, Snacks & Candy"
+    "category": "Biscoitos, Lanches e Doces"
   },
   {
     "description": "Biscoito amant. chocolate",
-    "category": "Cookies, Snacks & Candy"
+    "category": "Biscoitos, Lanches e Doces"
   },
   {
     "description": "Biscoito wafer morango",
-    "category": "Cookies, Snacks & Candy"
+    "category": "Biscoitos, Lanches e Doces"
   },
   {
     "description": "Biscoito wafer chocolate",
-    "category": "Cookies, Snacks & Candy"
+    "category": "Biscoitos, Lanches e Doces"
   },
   {
     "description": "Bolacha cream cracker",
-    "category": "Cookies, Snacks & Candy"
+    "category": "Biscoitos, Lanches e Doces"
   },
   {
     "description": "Bolo",
-    "category": "Beverages"
+    "category": "Pães e Bolos"
   },
   {
     "description": "Brócolis",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Café",
-    "category": "Beverages"
+    "category": "Bebidas"
   },
   {
     "description": "Caju",
-    "category": "Fruits"
+    "category": "Frutas"
   },
   {
     "description": "Caldo de carne",
-    "category": "Condiments/Spices & Bake"
+    "category": "Condimentos/Tempêros"
   },
   {
     "description": "Caldo de galinha",
-    "category": "Condiments/Spices & Bake"
+    "category": "Condimentos/Tempêros"
   },
   {
     "description": "Caldo de legumes",
-    "category": "Condiments/Spices & Bake"
+    "category": "Condimentos/Tempêros"
   },
   {
     "description": "Canela",
-    "category": "Condiments/Spices & Bake"
+    "category": "Condimentos/Tempêros"
   },
   {
     "description": "Carne bovina",
-    "category": "Meat & Seafood"
+    "category": "Carnes e Frutos do Mar"
   },
   {
     "description": "Carne",
-    "category": "Meat & Seafood"
+    "category": "Carnes e Frutos do Mar"
   },
   {
     "description": "Catchup",
-    "category": "Sauce"
+    "category": "Molhos"
   },
   {
     "description": "Cebola",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Cenoura",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Cera",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Cereal",
-    "category": "Breakfast & Cereal"
+    "category": "Café da Manhã e Cereais"
   },
   {
     "description": "Cerveja",
-    "category": "Beer, Wine & Spirits"
+    "category": "Cerveja, Vinho e Destilados"
   },
   {
     "description": "Chá em saquinho",
-    "category": "Beverages"
+    "category": "Bebidas"
   },
   {
     "description": "Champignon",
-    "category": "Vegetables"
+    "category": "Vegetais"
+  },
+  {
+    "description": "Charque",
+    "category": "Carnes e Frutos do Mar"
   },
   {
     "description": "Chicória",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Chuchu",
-    "category": "Vegetables"
+    "category": "Vegetais"
+  },
+  {
+    "description": "Coentro",
+    "category": "Condimentos/Tempêros"
   },
   {
     "description": "Colorífico",
-    "category": "Condiments/Spices & Bake"
+    "category": "Condimentos/Tempêros"
   },
   {
     "description": "Cominho",
-    "category": "Condiments/Spices & Bake"
+    "category": "Condimentos/Tempêros"
   },
   {
     "description": "Condicionador",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Cotonete",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Couve-flor",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Couve",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Cravo da índia",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Creme de barbear",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Creme de leite",
-    "category": "Bread & Bakery"
+    "category": "Pães e Bolos"
   },
   {
     "description": "Creme dental",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Curativos",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Curry",
-    "category": "Condiments/Spices & Bake"
+    "category": "Condimentos/Tempêros"
   },
   {
     "description": "Desengordurante",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Desinfetante",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Desodorante",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Desodorizador de ambiente",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Detergente",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Empanados",
-    "category": "Meat & Seafood"
+    "category": "Carnes e Frutos do Mar"
   },
   {
     "description": "Ervilha",
-    "category": "Canned Goods"
+    "category": "Enlatados"
   },
   {
     "description": "Escova de cabelo",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Escova de dente",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Esparadrapo",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Espinafre",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Esponja de aço",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Esponja de pia",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Esponja",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Essência de baunilha",
-    "category": "Bread & Bakery"
+    "category": "Pães e Bolos"
   },
   {
     "description": "Extrato de tomate",
-    "category": "Canned Goods"
+    "category": "Enlatados"
   },
   {
     "description": "Farinha de mandioca",
-    "category": "Grains, Pasta & Sides"
+    "category": "Grãos, Massas e Acomp."
   },
   {
     "description": "Farinha de milho",
-    "category": "Bread & Bakery"
+    "category": "Pães e Bolos"
   },
   {
     "description": "Farinha de rosca",
-    "category": "Bread & Bakery"
+    "category": "Pães e Bolos"
   },
   {
     "description": "Farinha de trigo",
-    "category": "Bread & Bakery"
+    "category": "Pães e Bolos"
   },
   {
     "description": "Farofa",
-    "category": "Bread & Bakery"
+    "category": "Pães e Bolos"
   },
   {
     "description": "Feijão",
-    "category": "Grains, Pasta & Sides"
+    "category": "Grãos, Massas e Acomp."
   },
   {
     "description": "Fermento biológico",
-    "category": "Bread & Bakery"
+    "category": "Pães e Bolos"
   },
   {
     "description": "Fermento em pó",
-    "category": "Bread & Bakery"
+    "category": "Pães e Bolos"
   },
   {
     "description": "Fermento",
-    "category": "Bread & Bakery"
+    "category": "Pães e Bolos"
   },
   {
     "description": "Filé de peixe",
-    "category": "Meat & Seafood"
+    "category": "Carnes e Frutos do Mar"
   },
   {
     "description": "Filme plástico",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Filtros para café",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Fio dental",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Fita crepe",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Fita isolante",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Flanelas",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Fósforos",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Fraldas descartáveis",
-    "category": "Baby"
+    "category": "Bebê"
   },
   {
     "description": "Frango",
-    "category": "Meat & Seafood"
+    "category": "Carnes e Frutos do Mar"
   },
   {
     "description": "Fubá",
-    "category": "Grains, Pasta & Sides"
+    "category": "Grãos, Massas e Acomp."
   },
   {
     "description": "Gaze",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Gelatina em pó",
-    "category": "Cookies, Snacks & Candy"
+    "category": "Biscoitos, Lanches e Doces"
   },
   {
     "description": "Geleia",
-    "category": "Breakfast & Cereal"
+    "category": "Café da Manhã e Cereais"
   },
   {
     "description": "Goiaba",
-    "category": "Fruits"
+    "category": "Frutas"
   },
   {
     "description": "Gordura vegetal",
-    "category": "Condiments/Spices & Bake"
+    "category": "Condimentos/Tempêros"
   },
   {
     "description": "Granola",
-    "category": "Bread & Bakery"
+    "category": "Pães e Bolos"
   },
   {
     "description": "Grão de bico",
-    "category": "Grains, Pasta & Sides"
+    "category": "Grãos, Massas e Acomp."
   },
   {
     "description": "Guardanapo de papel",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Guardanapos",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Hambúrguer",
-    "category": "Meat & Seafood"
+    "category": "Carnes e Frutos do Mar"
   },
   {
     "description": "Hastes flexíveis",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Hidratante",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Hortelã",
-    "category": "Condiments/Spices & Bake"
+    "category": "Condimentos/Tempêros"
   },
   {
     "description": "Inseticida",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Iogurte de frutas",
-    "category": "Dairy, Eggs & Cheese"
+    "category": "Laticínios, Ovos e Queijos"
   },
   {
     "description": "Iogurte natural",
-    "category": "Dairy, Eggs & Cheese"
+    "category": "Laticínios, Ovos e Queijos"
   },
   {
     "description": "Iogurte",
-    "category": "Dairy, Eggs & Cheese"
+    "category": "Laticínios, Ovos e Queijos"
   },
   {
     "description": "Salsicha de frango",
-    "category": "Canned Goods"
+    "category": "Enlatados"
   },
   {
     "description": "Salsicha mista",
-    "category": "Canned Goods"
+    "category": "Enlatados"
   },
   {
     "description": "Mortadela de frango",
-    "category": "Canned Goods"
+    "category": "Enlatados"
   },
   {
     "description": "Mortadela de porco",
-    "category": "Canned Goods"
+    "category": "Enlatados"
   },
   {
     "description": "Jerimum",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Kiwi",
-    "category": "Fruits"
+    "category": "Frutas"
   },
   {
     "description": "Lâmina de barbear",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Lâmpada",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Laranja",
-    "category": "Fruits"
+    "category": "Frutas"
   },
   {
     "description": "Lava-roupas",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Leite condensado",
-    "category": "Bread & Bakery"
+    "category": "Pães e Bolos"
   },
   {
     "description": "Leite de coco",
-    "category": "Bread & Bakery"
+    "category": "Pães e Bolos"
   },
   {
     "description": "Leite desnatado",
-    "category": "Beverages"
+    "category": "Bebidas"
   },
   {
     "description": "Leite em pó",
-    "category": "Breakfast & Cereal"
+    "category": "Café da Manhã e Cereais"
   },
   {
     "description": "Leite fermentado",
-    "category": "Bread & Bakery"
+    "category": "Pães e Bolos"
   },
   {
     "description": "Leite integral",
-    "category": "Beverages"
+    "category": "Bebidas"
   },
   {
     "description": "Lenço de papel",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Lenço umedecido",
-    "category": "Baby"
+    "category": "Bebê"
   },
   {
     "description": "Lentilha",
-    "category": "Grains, Pasta & Sides"
+    "category": "Grãos, Massas e Acomp."
   },
   {
     "description": "Limão",
-    "category": "Fruits"
+    "category": "Frutas"
   },
   {
     "description": "Limpa vidros",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Linguiça calabresa",
-    "category": "Meat & Seafood"
+    "category": "Carnes e Frutos do Mar"
   },
   {
     "description": "Linguiça mista",
-    "category": "Meat & Seafood"
+    "category": "Carnes e Frutos do Mar"
   },
   {
     "description": "Louro",
-    "category": "Condiments/Spices & Bake"
+    "category": "Condimentos/Tempêros"
   },
   {
     "description": "Lustra móvel",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Luvas plásticas",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Maçã",
-    "category": "Fruits"
+    "category": "Frutas"
   },
   {
     "description": "Macarrão instantâneo",
-    "category": "Grains, Pasta & Sides"
+    "category": "Grãos, Massas e Acomp."
   },
   {
     "description": "Maionese",
-    "category": "Sauce"
+    "category": "Molhos"
   },
   {
     "description": "Maisena",
-    "category": "Bread & Bakery"
+    "category": "Pães e Bolos"
   },
   {
     "description": "Mamão",
-    "category": "Fruits"
+    "category": "Frutas"
   },
   {
     "description": "Manga",
-    "category": "Fruits"
+    "category": "Frutas"
   },
   {
     "description": "Manjericão",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Manteiga",
-    "category": "Dairy, Eggs & Cheese"
+    "category": "Laticínios, Ovos e Queijos"
   },
   {
     "description": "Maracujá",
-    "category": "Fruits"
+    "category": "Frutas"
   },
   {
     "description": "Margarina",
-    "category": "Dairy, Eggs & Cheese"
+    "category": "Laticínios, Ovos e Queijos"
   },
   {
     "description": "Massa de bolo",
-    "category": "Bread & Bakery"
+    "category": "Pães e Bolos"
   },
   {
     "description": "Massa de lasanha",
-    "category": "Grains, Pasta & Sides"
+    "category": "Grãos, Massas e Acomp."
   },
   {
     "description": "Macarrão",
-    "category": "Grains, Pasta & Sides"
+    "category": "Grãos, Massas e Acomp."
   },
   {
     "description": "Melancia",
-    "category": "Fruits"
+    "category": "Frutas"
   },
   {
     "description": "Melão",
-    "category": "Fruits"
+    "category": "Frutas"
   },
   {
     "description": "Milho verde",
-    "category": "Canned Goods"
+    "category": "Enlatados"
   },
   {
     "description": "Milho",
-    "category": "Grains, Pasta & Sides"
+    "category": "Grãos, Massas e Acomp."
   },
   {
     "description": "Molho de tomate",
-    "category": "Sauce"
+    "category": "Molhos"
   },
   {
     "description": "Morango",
-    "category": "Fruits"
+    "category": "Frutas"
   },
   {
     "description": "Mostarda",
-    "category": "Sauce"
+    "category": "Molhos"
   },
   {
     "description": "Multiuso",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Nabo",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Noz-moscada",
-    "category": "Cookies, Snacks & Candy"
+    "category": "Biscoitos, Lanches e Doces"
   },
   {
     "description": "Óleo",
-    "category": "Condiments/Spices & Bake"
+    "category": "Condimentos/Tempêros"
   },
   {
     "description": "Ovos",
-    "category": "Dairy, Eggs & Cheese"
+    "category": "Laticínios, Ovos e Queijos"
   },
   {
     "description": "Pães",
-    "category": "Bread & Bakery"
+    "category": "Pães e Bolos"
   },
   {
     "description": "Palha de aço",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Palito de dente",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Palitos de dente",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Palmito",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Pano de chão",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Pano de limpeza",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Pão de forma",
-    "category": "Bread & Bakery"
+    "category": "Pães e Bolos"
   },
   {
     "description": "Pão francês",
-    "category": "Bread & Bakery"
+    "category": "Pães e Bolos"
   },
   {
     "description": "Papel alumínio",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Papel filme",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Papel higiênico",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Papel manteiga",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Papel toalha",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Peito de frango",
-    "category": "Meat & Seafood"
+    "category": "Carnes e Frutos do Mar"
   },
   {
     "description": "Peixe",
-    "category": "Meat & Seafood"
+    "category": "Carnes e Frutos do Mar"
   },
   {
     "description": "Pente",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Pepino",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Pera",
-    "category": "Fruits"
+    "category": "Frutas"
   },
   {
     "description": "Pilhas",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Pimenta",
-    "category": "Condiments/Spices & Bake"
+    "category": "Condimentos/Tempêros"
   },
   {
     "description": "Pimentão",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Pipoca",
-    "category": "Grains, Pasta & Sides"
+    "category": "Grãos, Massas e Acomp."
   },
   {
     "description": "Polpa de tomate",
-    "category": "Sauce"
+    "category": "Molhos"
   },
   {
     "description": "Potes descartáveis",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Prendedor de roupa",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Preservativo",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Presunto",
-    "category": "Dairy, Eggs & Cheese"
+    "category": "Laticínios, Ovos e Queijos"
   },
   {
     "description": "Protetor solar",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Queijo branco",
-    "category": "Dairy, Eggs & Cheese"
+    "category": "Laticínios, Ovos e Queijos"
   },
   {
     "description": "Queijo coalho",
-    "category": "Dairy, Eggs & Cheese"
+    "category": "Laticínios, Ovos e Queijos"
   },
   {
     "description": "Queijo prato",
-    "category": "Dairy, Eggs & Cheese"
+    "category": "Laticínios, Ovos e Queijos"
   },
   {
     "description": "Queijo mozarela",
-    "category": "Dairy, Eggs & Cheese"
+    "category": "Laticínios, Ovos e Queijos"
   },
   {
     "description": "Queijo parmesão ralado",
-    "category": "Dairy, Eggs & Cheese"
+    "category": "Laticínios, Ovos e Queijos"
   },
   {
     "description": "Queijos",
-    "category": "Dairy, Eggs & Cheese"
+    "category": "Laticínios, Ovos e Queijos"
   },
   {
     "description": "Quiabo",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Ração para animais",
-    "category": "Pet Care"
+    "category": "Produtos Pet"
   },
   {
     "description": "Refrigerante",
-    "category": "Beverages"
+    "category": "Bebidas"
   },
   {
     "description": "Repolho",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Requeijão",
-    "category": "Dairy, Eggs & Cheese"
+    "category": "Laticínios, Ovos e Queijos"
   },
   {
     "description": "Rodo",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Rúcula",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Sabão em pedra",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Sabão em pó",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Sabão",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Sabonete",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Sacos de lixo - 15L",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Sacos de lixo - 30L",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Sacos de lixo - 50L",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Sacos de lixo - 100L",
-    "category": "Cleaning Supplies"
+    "category": "Produtos de Limpeza"
   },
   {
     "description": "Sal grosso",
-    "category": "Condiments/Spices & Bake"
+    "category": "Condimentos/Tempêros"
   },
   {
     "description": "Sal",
-    "category": "Condiments/Spices & Bake"
+    "category": "Condimentos/Tempêros"
   },
   {
     "description": "Salsa",
-    "category": "Condiments/Spices & Bake"
+    "category": "Condimentos/Tempêros"
   },
   {
     "description": "Salsinha",
-    "category": "Condiments/Spices & Bake"
+    "category": "Condimentos/Tempêros"
   },
   {
     "description": "Shampoo",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Soja",
-    "category": "Grains, Pasta & Sides"
+    "category": "Grãos, Massas e Acomp."
   },
   {
     "description": "Sopa",
-    "category": "Canned Goods"
+    "category": "Enlatados"
   },
   {
     "description": "Suco de frutas",
-    "category": "Beverages"
+    "category": "Bebidas"
   },
   {
     "description": "Suco",
-    "category": "Beverages"
+    "category": "Bebidas"
   },
   {
     "description": "Talco",
-    "category": "Health & Beauty/Personal Care"
+    "category": "Cuidado Pessoal/Beleza"
   },
   {
     "description": "Tomate",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Torradas",
-    "category": "Breakfast & Cereal"
+    "category": "Café da Manhã e Cereais"
   },
   {
     "description": "Uvas",
-    "category": "Fruits"
+    "category": "Frutas"
   },
   {
     "description": "Vagem",
-    "category": "Vegetables"
+    "category": "Vegetais"
   },
   {
     "description": "Vassoura",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Velas",
-    "category": "Miscellaneous"
+    "category": "Itens Diversos"
   },
   {
     "description": "Vinagre",
-    "category": "Condiments/Spices & Bake"
+    "category": "Condimentos/Tempêros"
   },
   {
     "description": "Vinho",
-    "category": "Beer, Wine & Spirits"
+    "category": "Cerveja, Vinho e Destilados"
   }
 ]

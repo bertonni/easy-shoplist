@@ -6,6 +6,7 @@ export const ListContext = createContext();
 export function ListProvider({ children }) {
   const [list, setList] = useState(JSON.parse(localStorage.getItem('list')) ?? []);
   const [items] = useState(allItems);
+  const [activePage, setActivePage] = useState('');
 
   useEffect(() => {
     localStorage.setItem('list', JSON.stringify(list));
@@ -35,6 +36,10 @@ export function ListProvider({ children }) {
     }
   }
 
+  function handleActivePage(url) {
+    setActivePage(url);
+  }
+
   function clearList() {
     setList([]);
   }
@@ -44,6 +49,8 @@ export function ListProvider({ children }) {
       value={{
         list,
         items,
+        activePage,
+        handleActivePage,
         updateList,
         addSubtotal,
         updateQuantity,
