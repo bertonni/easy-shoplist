@@ -1,38 +1,93 @@
 import { createContext, useState, useEffect } from 'react';
-import allItems from '../assets/allItems.json';
+import { database } from '../assets/firebase';
 
 export const ListContext = createContext();
 
-export function ListProvider({ children }) {
+export function ListContextProvider({ children }) {
   const [list, setList] = useState(JSON.parse(localStorage.getItem('list')) ?? []);
-  const [items] = useState(allItems);
+  const [items, setItems] = useState([]);
+
+  function getAllItems() {
+    database.collection('items').onSnapshot({ includeMetadataChanges: true }, (snapshot) => {
+      const newItems = [];
+      if (snapshot.metadata.fromCache) {
+        snapshot.docChanges().forEach((change) => {
+          if (change.type === "added") {
+            let newItem = { id: change.doc.id, ...change.doc.data() }
+            newItems.push(newItem);
+          }
+        });
+      }
+
+      if (!snapshot.metadata.fromCache) {
+        snapshot.forEach((doc) => {
+          let newItem = { id: doc.id, ...doc.data() }
+          newItems.push(newItem);
+        })
+      }
+      setItems(newItems);
+    });
+  }
+
   const [activePage, setActivePage] = useState('');
 
   useEffect(() => {
     localStorage.setItem('list', JSON.stringify(list));
-    return () => {}
+    return () => { }
   }, [list]);
 
-  function updateQuantity(index, value) {
-    if (list[index].quantity <= 0 && value < 0) return;
-    const newList = [...list];
-    newList[index].quantity += value;
-    setList(newList);
-  }
+  useEffect(() => {
+    getAllItems();
+    return () => { }
+  }, []);
+
 
   function addSubtotal(index, item) {
     const newList = [...list];
-    newList[index].subtotal = item.subtotal;
+    newList[index].price = item.price;
     setList(newList);
   }
+  
+  function insertItem(item, newItem) {
+    setList([...list, item]);
+    if (newItem) {
+      const itemToAdd = {
+        category: item.category,
+        description: item.description
+      }
+      setItems([...items, itemToAdd]);
 
-  function updateList(item) {
+      database.collection('items').add(itemToAdd)
+        .then(() => console.log('Item added to firebase'))
+        .catch((error) => console.log(error.message));
+    }
+  }
+
+  // function updateItem(item) {
+
+  // }
+
+  // function removeItem(item) {
+
+  // }
+
+  function updateList(item, newItem = null) {
+    // verify if the item already exists in the list
     const index = list.findIndex(val => val.description === item.description);
-    if (index < 0) setList([...list, item]);
+    // if doesn't exists, add the item in the list
+    if (index < 0) insertItem(item, newItem);
     else {
-      const newArr = [...list];
-      newArr.splice(index, 1);
-      setList(newArr);
+      const newList = [...list];
+      // if the item wasn't changed, remove from the list
+      if (newList[index].quantity === item.quantity) {
+        newList.splice(index, 1);
+        setList(newList);
+        return;
+      }
+      // if the item has changed, update the list
+      newList[index] = item;
+      newList[index].price = item.price
+      setList(newList);
     }
   }
 
@@ -53,10 +108,9 @@ export function ListProvider({ children }) {
         handleActivePage,
         updateList,
         addSubtotal,
-        updateQuantity,
         clearList
       }}>
-      { children }
+      {children}
     </ListContext.Provider>
   )
 }
