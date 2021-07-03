@@ -1,8 +1,9 @@
 // import { PlusIcon } from "@heroicons/react/outline";
 import { MinusIcon, PlusIcon, XIcon } from "@heroicons/react/outline";
-import { useContext, useRef, useState } from "react";
-import { ListContext } from "../contexts/ListContext";
+import { useRef, useState } from "react";
+import { useList } from "../hooks/useList";
 import ModalAddToList from "./ModalAddToList";
+import ModalInsertItem from "./ModalInsertItem";
 
 export default function AllItems() {
   const searchInput = useRef();
@@ -12,11 +13,12 @@ export default function AllItems() {
   const [searchedValue, setSearchedValue] = useState('');
   const [category, setCategory] = useState('default');
   const [showAddItemModal, setShowAddItemModal] = useState([]);
+  const [showInsertItemModal, setShowInsertItemModal] = useState(false);
 
   const [showSelectCategory, setShowSelectCategory] = useState(true);
   const [showSearchInput, setShowSearchInput] = useState(false);
 
-  const { items, list, updateList, clearList } = useContext(ListContext);
+  const { items, list, updateList, clearList } = useList();
 
   const categories = ["Frutas", "Vegetais", "Cuidado Pessoal/Beleza", "Pães e Bolos",
     "Bebidas", "Grãos, Massas e Acomp.", "Café da Manhã e Cereais", "Produtos de Limpeza",
@@ -52,6 +54,7 @@ export default function AllItems() {
 
   function closeModal() {
     setShowAddItemModal([]);
+    setShowInsertItemModal(false);
   }
 
   function handleChoice(choice) {
@@ -79,7 +82,20 @@ export default function AllItems() {
   return (
     <div className="px-4 flex flex-col justify-center mt-3 relative">
       {showAddItemModal.length !== 0 &&
-        <ModalAddToList item={showAddItemModal} updateList={updateList} closeModal={closeModal} />
+        <ModalAddToList
+          item={showAddItemModal}
+          updateList={updateList}
+          categories={categories}
+          closeModal={closeModal}
+        />
+      }
+      {showInsertItemModal &&
+        <ModalInsertItem
+          updateList={updateList}
+          categories={categories}
+          description={searchedValue}
+          closeModal={closeModal}
+        />
       }
       <div className="flex items-center justify-between gap-2 mb-2">
         <button className={`px-4 py-2 border rounded focus:outline-none
@@ -152,10 +168,10 @@ export default function AllItems() {
       {notFound && searchedValue.length !== 0 &&
         <div className="flex items-center justify-center gap-4 mb-2">
           <span className="text-sm text-center text-gray-400">Item não encontrado</span>
-          {/* <button
+          <button
             className="px-4 py-2 bg-green-500 text-white rounded hover:opacity-80"
-            onClick={() => setShowAddItemModal(true)}
-          >Adicionar</button> */}
+            onClick={() => setShowInsertItemModal(true)}
+          >Adicionar</button>
         </div>
       }
       {(searchedValue.length > 0 || category !== "default") &&
@@ -171,7 +187,6 @@ export default function AllItems() {
             const bg = idx !== -1 ? "bg-gray-500 text-white" : "text-gray-600";
             const textCategory = idx !== -1 ? "text-gray-100" : "text-gray-400";
             const bgIcon = idx !== -1 ? "bg-red-300" : "bg-green-300";
-            const newItem = { ...item, quantity: 0, subtotal: 0 };
             const hasFound = itemDescription.toLowerCase().indexOf(searchedValue) !== -1;
 
             if ((hasFound && (itemCategory === category || category === "All")) ||
@@ -189,13 +204,13 @@ export default function AllItems() {
                     {icon &&
                       <MinusIcon
                         className="animate-rotate-180 text-gray-700 h-9 w-9"
-                        onClick={() => updateList(newItem)}
+                        onClick={() => updateList(item)}
                       />
                     }
                     {!icon &&
                       <PlusIcon
                         className="animate-rotate-90 text-gray-700 h-9 w-9"
-                        onClick={() => setShowAddItemModal(newItem)}
+                        onClick={() => setShowAddItemModal(item)}
                       />
                     }
                   </div>

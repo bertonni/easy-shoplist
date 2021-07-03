@@ -2,12 +2,11 @@ import { useState } from "react"
 
 export default function ModalAddToList({ item, updateList, closeModal }) {
   const [count, setCount] = useState(0);
-  // const [itemSaved, setItemSaved] = useState(false);
 
   function saveItem(e) {
     e.preventDefault();
-    item.quantity = count;
-    // setItemSaved(true);
+    item['quantity'] = Number(count);
+    item['price'] = 0;
     updateList(item);
     closeModal();
   }
@@ -19,22 +18,17 @@ export default function ModalAddToList({ item, updateList, closeModal }) {
       />
       <div className="flex justify-center">
         <div className="flex flex-col z-30 bg-gray-50 absolute top-7 px-4 py-4 rounded w-11/12">
-          {/* {itemSaved &&
-            <div className="border bg-green-200 rounded h-10 px-4 flex items-center justify-center py-4">
-              <span className="text-green-800">Item adicionado à lista</span>
-            </div>
-          } */}
           <h1 className="text-center text-xl font-medium my-2 text-gray-700">Selecione a quantidade</h1>
           <div className="flex flex-col gap-2">
-            <div className="flex flex-col">
-              <span className="text-sm text-gray-500">Item:</span>
-              <span className="">{item.description}</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-sm text-gray-500">Categoria:</span>
-              <span className="">{item.category}</span>
-            </div>
             <form>
+              <div className="flex flex-col">
+                <span className="text-sm text-gray-500">Item:</span>
+                <span className="">{item.description}</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-sm text-gray-500">Categoria:</span>
+                <span className="">{item.category}</span>
+              </div>
               <input
                 type="number"
                 autoFocus
@@ -53,7 +47,7 @@ export default function ModalAddToList({ item, updateList, closeModal }) {
                 <a
                   href="#/"
                   className="rounded focus:outline-none border border-gray-500 text-gray-700 px-4 py-2"
-                  onClick={(e) => {e.preventDefault(); closeModal()}}
+                  onClick={(e) => { e.preventDefault(); closeModal() }}
                 >
                   Cancelar
                 </a>

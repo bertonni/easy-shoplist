@@ -1,50 +1,73 @@
-// import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/outline";
-import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { ListContext } from "../contexts/ListContext";
+import { useCallback, useEffect, useState } from "react";
+import { Link, Redirect } from "react-router-dom";
+import { useList } from "../hooks/useList";
+import { useAuth } from "../hooks/useAuth";
+import ModalEditItem from "./ModalEditItem";
 
 export default function Home() {
 
-  const { list, addSubtotal, handleActivePage } = useContext(ListContext);
-  const [subtotal, setSubtotal] = useState(getSubtotal());
+  const { list, addSubtotal, handleActivePage, updateList } = useList();
+  const { loggedUser } = useAuth();
+
+  const getSubtotal = useCallback(
+    () => {
+      let total = 0;
+      list.forEach(item => {
+        total += (item.price * item.quantity);
+      });
+      return total;
+    },
+    [list],
+  );
+  
+  const [subtotal, setSubtotal] = useState(getSubtotal);
+  const [showEditItemModal, setShowEditItemModal] = useState([]);
 
   useEffect(() => {
     handleActivePage('home');
-  }, [handleActivePage])
+  }, [handleActivePage]);
 
-  function getSubtotal() {
-    let total = 0;
-    list.forEach(item => {
-      total += (item.subtotal * item.quantity);
-    });
-    return total;
-  }
+  useEffect(() => {
+    setSubtotal(getSubtotal());
+  }, [getSubtotal]);
+
 
   function calculateSubtotal(e, item) {
     const value = Number(e.target.value);
     const index = list.findIndex(val => val.description === item.description);
 
-    item.subtotal = value;
+    item.price = value;
     addSubtotal(index, item);
 
-    setSubtotal(getSubtotal());
+    setSubtotal(getSubtotal);
     e.target.value = value.toFixed(2);
   }
 
+  function closeModal() {
+    setShowEditItemModal([]);
+  }
+
+  if(!loggedUser) return <Redirect to='/' />
+
   return (
-    <div className="flex flex-col gap-2 items-center justify-center">
+    <div className="flex flex-col gap-2 items-center justify-center relative">
+      {showEditItemModal.length !== 0 &&
+        <ModalEditItem item={showEditItemModal} updateList={updateList} closeModal={closeModal} />
+      }
       <h1 className="text-2xl text-gray-700 mb-2 font-medium">Sua Lista</h1>
       {list.length > 0 &&
         <>
           <div className="max-h-116 overflow-auto rounded w-11/12 border-b-4 border-t-4">
             {list.map((item, index) => {
-              const bg = item.subtotal !== 0 ? "bg-gray-500" : "";
-              const titleColor = item.subtotal !== 0 ? "text-gray-50" : "text-gray-400";
-              const textColor = item.subtotal !== 0 ? "text-gray-100 line-through" : "text-gray-600";
+              const bg = item.price !== 0 ? "bg-gray-500" : "";
+              const titleColor = item.price !== 0 ? "text-gray-50" : "text-gray-400";
+              const textColor = item.price !== 0 ? "text-gray-100 line-through" : "text-gray-600";
               return (
                 <div key={index} className="flex items-center h-14 gap-2">
                   <div className={`pl-3 ${bg} flex flex-col border rounded h-full justify-center
-                   flex-grow truncate transition duration-300`}>
+                   flex-grow truncate transition duration-300`}
+                    onClick={() => setShowEditItemModal(item)}
+                  >
                     <div className="flex justify-between">
                       <span className={`${titleColor} text-sm`}>{item.category}</span>
                       <span className={`${titleColor} text-sm pr-2`}>Qnt</span>
@@ -61,7 +84,7 @@ export default function Home() {
                       type="number"
                       min={0}
                       placeholder="R$"
-                      defaultValue={item.subtotal === 0 ? 0.00.toFixed(2) : item.subtotal.toFixed(2)}
+                      defaultValue={item.price === 0 ? 0.00.toFixed(2) : item.price.toFixed(2)}
                       className="w-full h-full pl-2 text-sm"
                       onBlur={(e) => calculateSubtotal(e, item)}
                       onFocus={(e) => e.target.select()}
