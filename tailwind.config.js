@@ -9,13 +9,23 @@ module.exports = {
           'to': { transform: 'rotate(90deg)' }
         },
         rotate180: {
-          'from': {transform: 'rotate(0deg)'},
-          'to': {transform: 'rotate(180deg)'}
+          'from': { transform: 'rotate(0deg)' },
+          'to': { transform: 'rotate(180deg)' }
         },
+        slideFromLeft: {
+          'from': { transform: 'translate3d(-100%, 0, 0)' },
+          'to': { transform: 'none' },
+        },
+        slideFromTop: {
+          'from': { transform: 'translate3d(0, 100%, 0)' },
+          'to': { transform: 'none' },
+        }
       },
       animation: {
         'rotate-90': 'rotate90 0.3s forwards ease',
         'rotate-180': 'rotate180 0.3s forwards ease',
+        'slide-left': 'slideFromLeft 0.3s forwards ease',
+        'slide-top': 'slideFromTop 0.3s forwards ease'
       },
       height: {
         '100': '25rem',

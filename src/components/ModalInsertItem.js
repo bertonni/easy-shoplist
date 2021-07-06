@@ -18,10 +18,10 @@ export default function ModalInsertItem({ updateList, categories, description, c
 
   return (
     <>
-      <div className="bg-black bg-opacity-50 z-20 absolute -top-20 -left-0 h-screen w-screen"
+      <div className="bg-black bg-opacity-50 z-20 absolute top-0 -left-0 h-screen w-full sm:w-screen"
         onClick={() => closeModal()}
       />
-      <div className="flex justify-center">
+      <div className="flex justify-center relative">
         <div className="flex flex-col z-30 bg-gray-50 absolute top-7 px-4 py-4 rounded w-11/12">
           <h1 className="text-center text-xl font-medium my-2 text-gray-700">Selecione a quantidade</h1>
           <div className="flex flex-col gap-2">

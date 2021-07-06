@@ -1,9 +1,11 @@
 // import { PlusIcon } from "@heroicons/react/outline";
 import { MinusIcon, PlusIcon, XIcon } from "@heroicons/react/outline";
 import { useRef, useState } from "react";
+import { useAuth } from "../hooks/useAuth";
 import { useList } from "../hooks/useList";
 import ModalAddToList from "./ModalAddToList";
 import ModalInsertItem from "./ModalInsertItem";
+import { Link } from 'react-router-dom';
 
 export default function AllItems() {
   const searchInput = useRef();
@@ -18,7 +20,8 @@ export default function AllItems() {
   const [showSelectCategory, setShowSelectCategory] = useState(true);
   const [showSearchInput, setShowSearchInput] = useState(false);
 
-  const { items, list, updateList, clearList } = useList();
+  const { items, list, updateList, removeFromList, clearList } = useList();
+  const { loggedUser } = useAuth();
 
   const categories = ["Frutas", "Vegetais", "Cuidado Pessoal/Beleza", "Pães e Bolos",
     "Bebidas", "Grãos, Massas e Acomp.", "Café da Manhã e Cereais", "Produtos de Limpeza",
@@ -80,7 +83,7 @@ export default function AllItems() {
   }
 
   return (
-    <div className="px-4 flex flex-col justify-center mt-3 relative">
+    <div className="px-4 flex flex-col justify-center mt-3 sm:w-9/12 lg:w-6/12">
       {showAddItemModal.length !== 0 &&
         <ModalAddToList
           item={showAddItemModal}
@@ -168,10 +171,17 @@ export default function AllItems() {
       {notFound && searchedValue.length !== 0 &&
         <div className="flex items-center justify-center gap-4 mb-2">
           <span className="text-sm text-center text-gray-400">Item não encontrado</span>
-          <button
-            className="px-4 py-2 bg-green-500 text-white rounded hover:opacity-80"
-            onClick={() => setShowInsertItemModal(true)}
-          >Adicionar</button>
+          {loggedUser ?
+            <button
+              className="px-4 py-2 bg-green-500 text-white rounded hover:opacity-80"
+              onClick={() => setShowInsertItemModal(true)}
+            >Adicionar</button>
+            :
+            <Link
+              className="px-4 py-2 bg-gray-100 text-gray-700 rounded hover:opacity-80"
+              to="/signin"
+            >Fazer Login</Link>
+          }
         </div>
       }
       {(searchedValue.length > 0 || category !== "default") &&
@@ -204,7 +214,7 @@ export default function AllItems() {
                     {icon &&
                       <MinusIcon
                         className="animate-rotate-180 text-gray-700 h-9 w-9"
-                        onClick={() => updateList(item)}
+                        onClick={() => removeFromList(item)}
                       />
                     }
                     {!icon &&

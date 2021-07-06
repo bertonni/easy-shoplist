@@ -5,6 +5,7 @@ export const AuthContext = createContext({});
 
 export function AuthContextProvider(props) {
   const [loggedUser, setLoggedUser] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
@@ -23,18 +24,16 @@ export function AuthContextProvider(props) {
       .then((userCredential) => {
         setLoggedUser(userCredential.user);
       })
-      .catch((error) => console.log(error.message));
+      .catch((error) => setError(error.message));
   }
 
   function signInWithEmail(email, password) {
     auth.signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
         if (userCredential.user) setLoggedUser(userCredential.user);
+        window.location.replace('/');
       })
-      .catch((error) => {
-        console.log(error.code)
-        console.log(error.message)
-    })
+      .catch((error) => setError(error.message));
   }
 
   function signOut() {
@@ -42,12 +41,14 @@ export function AuthContextProvider(props) {
       .then(() => {
         window.location.replace('/');
       })
-      .catch((error) => console.log(error.message))
+      .catch((error) => setError(error.message))
   }
 
   return (
     <AuthContext.Provider value={{
       loggedUser,
+      error,
+      setError,
       signInWithEmail,
       signOut,
       registerUser

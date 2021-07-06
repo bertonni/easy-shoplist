@@ -1,13 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useList } from "../hooks/useList";
-import { useAuth } from "../hooks/useAuth";
 import ModalEditItem from "./ModalEditItem";
 
 export default function Home() {
 
   const { list, addSubtotal, handleActivePage, updateList } = useList();
-  const { loggedUser } = useAuth();
 
   const getSubtotal = useCallback(
     () => {
@@ -19,7 +17,7 @@ export default function Home() {
     },
     [list],
   );
-  
+
   const [subtotal, setSubtotal] = useState(getSubtotal);
   const [showEditItemModal, setShowEditItemModal] = useState([]);
 
@@ -47,17 +45,19 @@ export default function Home() {
     setShowEditItemModal([]);
   }
 
-  if(!loggedUser) return <Redirect to='/' />
-
   return (
-    <div className="flex flex-col gap-2 items-center justify-center relative">
+    <div className="flex flex-col gap-2 items-center justify-center">
       {showEditItemModal.length !== 0 &&
-        <ModalEditItem item={showEditItemModal} updateList={updateList} closeModal={closeModal} />
+        <ModalEditItem
+          item={showEditItemModal}
+          updateList={updateList}
+          closeModal={closeModal}
+        />
       }
       <h1 className="text-2xl text-gray-700 mb-2 font-medium">Sua Lista</h1>
       {list.length > 0 &&
         <>
-          <div className="max-h-116 overflow-auto rounded w-11/12 border-b-4 border-t-4">
+          <div className="max-h-116 overflow-auto rounded w-11/12 sm:w-9/12 lg:w-6/12 border-b-4 border-t-4">
             {list.map((item, index) => {
               const bg = item.price !== 0 ? "bg-gray-500" : "";
               const titleColor = item.price !== 0 ? "text-gray-50" : "text-gray-400";

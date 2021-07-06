@@ -1,21 +1,24 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/outline";
 import { useState } from "react";
+import { useList } from "../hooks/useList";
 
 export default function ModalEditItem({ item, updateList, closeModal }) {
 
   const [count, setCount] = useState(Number(item.quantity));
-  
-  const newItem = {
-    description: item.description,
-    category: item.category,
-    quantity: item.quantity,
-    price: item.price
-  }
+  const { removeFromList } = useList();
 
+  
   function saveItem(e) {
     e.preventDefault();
+    
+    const newItem = {
+      id: item.id,
+      description: item.description,
+      category: item.category,
+      quantity: count,
+      price: item.price
+    }
 
-    newItem.quantity = count;
     updateList(newItem);
     closeModal();
   }
@@ -27,15 +30,17 @@ export default function ModalEditItem({ item, updateList, closeModal }) {
 
   function removeItem(e) {
     e.preventDefault();
+    removeFromList(item);
+    closeModal();
   }
 
   return (
     <>
-      <div className="bg-black bg-opacity-50 z-20 absolute -top-20 -left-0 h-screen w-screen"
+      <div className="bg-black bg-opacity-50 z-20 absolute top-0 left-0 h-screen w-full sm:w-screen"
         onClick={() => closeModal()}
       />
-      <div className="flex justify-center">
-        <div className="flex flex-col z-30 bg-gray-50 absolute top-7 px-4 py-4 rounded w-11/12">
+      <div className="flex justify-center relative">
+        <div className="flex flex-col z-30 bg-gray-50 absolute top-7 px-4 py-4 rounded">
           <h1 className="text-center text-xl font-medium my-2 text-gray-700">Editar Item</h1>
           <div className="flex flex-col gap-2">
             <div className={`pl-3 flex flex-col rounded h-full justify-center
@@ -49,7 +54,7 @@ export default function ModalEditItem({ item, updateList, closeModal }) {
                 </div>
               </div>
               <div className="flex items-center justify-between">
-                <span className={`text-gray-600 font-medium text-xl font-medium overflow-hidden truncate`}>
+                <span className={`text-gray-600 font-medium text-xl overflow-hidden truncate`}>
                   {item.description}
                 </span>
                 <div className="flex items-center">

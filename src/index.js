@@ -7,8 +7,8 @@ import { ListContextProvider } from './contexts/ListContext';
 import { AuthContextProvider } from './contexts/AuthContext';
 
 ReactDOM.render(
-  <ListContextProvider >
-    <AuthContextProvider>
+  <AuthContextProvider>
+    <ListContextProvider >
       <header>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -16,8 +16,8 @@ ReactDOM.render(
       <React.StrictMode>
         <App />
       </React.StrictMode>
-    </AuthContextProvider>
-  </ListContextProvider>,
+    </ListContextProvider>
+  </AuthContextProvider>,
   document.getElementById('root')
 );
 

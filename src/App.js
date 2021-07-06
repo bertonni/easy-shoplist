@@ -23,51 +23,58 @@ export default function App() {
 
   return (
     <>
-      {loggedUser ?
       <Router>
         <div>
-          <nav>
-            <ul className="flex items-center py-4 justify-center gap-4">
-              <li>
-                <Link
-                  className={`${homeIsActive} py-1 px-2 font-medium text-lg border-gray-500 text-gray-700`}
-                  to="/"
-                  >
-                  Início
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={`${addIsActive} py-1 px-2 font-medium text-lg border-gray-500 text-gray-700`}
-                  to="/add"
-                  >
-                  Adicionar Item
-                </Link>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleSignOut()}
-                  className={`focus:outline-none py-1 px-2 font-medium text-lg border-gray-500 text-gray-700`}
-                >
-                  Sair
-                </button>
-              </li>
-            </ul>
-          </nav>
-
-          <Switch>
-            <Route path="/add">
-              <AddItem />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
+          {loggedUser ?
+            <>
+              <div className="flex flex-col items-center justify-center">
+                <nav>
+                  <ul className="flex p-3 justify-center gap-3">
+                    <li>
+                      <Link
+                        className={`${homeIsActive} py-1 px-2 font-medium text-lg border-gray-500
+                       text-gray-700`}
+                        to="/"
+                      >
+                        Início
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={`${addIsActive} py-1 px-2 font-medium text-lg border-gray-500
+                       text-gray-700`}
+                        to="/add"
+                      >
+                        Adicionar Item
+                      </Link>
+                    </li>
+                    <li>
+                      <button
+                        onClick={() => handleSignOut()}
+                        className={`focus:outline-none font-medium text-lg border-gray-500
+                         text-gray-700`}
+                      >
+                        Sair
+                      </button>
+                    </li>
+                  </ul>
+                </nav>
+                <span className="text-gray-700 my-1 text-sm">Olá, {loggedUser.email}</span>
+              </div>
+              <Switch>
+                <Route path="/add">
+                  <AddItem />
+                </Route>
+                <Route path="/">
+                  <Home />
+                </Route>
+              </Switch>
+            </>
+            :
+            <SignIn />
+          }
         </div>
       </Router>
-      :
-      <SignIn />
-      }
     </>
-    );
-  }
+  );
+}
