@@ -20,12 +20,13 @@ export default function SignIn() {
     setErrors('');
     const email = e.target.email.value;
     const password = e.target.password.value;
+    const keepSession = e.target.remember.checked ?? false;
 
-    if(email.trim() === '' || password.trim() === '') {
+    if (email.trim() === '' || password.trim() === '') {
       setErrors('Todos os campos devem ser preenchidos');
       return;
     }
-    if (isSignIn) await signInWithEmail(email, password);
+    if (isSignIn) await signInWithEmail(email, password, keepSession);
     if (!isSignIn) await registerUser(email, password);
   }
 
@@ -54,22 +55,33 @@ export default function SignIn() {
                 className="rounded px-2 border h-10 w-full mt-1"
               />
             </div>
+            {isSignIn &&
+              <div>
+                <label className="flex gap-2 items-center text-sm text-gray-500">
+                  <input type="checkbox"
+                    name="remember"
+                    className="rounded px-2 border"
+                  />
+                  Manter login
+                </label>
+              </div>
+            }
           </div>
           <div className="flex items-center justify-center gap-4 mt-3">
             <button
               type="submit"
-              className="rounded focus:outline-none border border-gray-500 text-gray-700 px-4 py-2"
+              className="rounded focus:outline-none border border-gray-500 text-gray-700 px-4 py-1"
             >
               {isSignIn ? 'Entrar' : 'Registrar'}
             </button>
           </div>
         </form>
         {isSignIn ?
-          <span className="text-sm text-gray-700 mt-2 text-center">Não tem uma conta? 
+          <span className="text-sm text-gray-700 mt-2 text-center">Não tem uma conta?
             <button
               onClick={() => { setIsSignIn(false); setErrors(null); setError(null); }}
               className="text-blue-500 font-medium ml-1 focus:outline-none hover:underline"
-              > Cadastre-se</button>
+            > Cadastre-se</button>
           </span>
           :
           <span className="text-sm text-gray-700 mt-2 text-center">Já tem uma conta?

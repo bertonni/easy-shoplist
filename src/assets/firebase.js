@@ -15,7 +15,8 @@ const firebaseConfig = {
 if (firebase.app.length) firebase.initializeApp(firebaseConfig);
 
 firebase.firestore().settings({
-  cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED
+  cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED,
+  merge: true
 });
 
 firebase.firestore().enablePersistence()

@@ -101,13 +101,13 @@ export default function AllItems() {
         />
       }
       <div className="flex items-center justify-between gap-2 mb-2">
-        <button className={`px-4 py-2 border rounded focus:outline-none
+        <button className={`px-4 py-1 border rounded focus:outline-none
           hover:opacity-80 transition duration-300 ${bgCategory}`}
           onClick={() => { handleChoice('category') }}
         >
           Categoria
         </button>
-        <button className={`px-4 py-2 border rounded focus:outline-none
+        <button className={`px-4 py-1 border rounded focus:outline-none
           hover:opacity-80 transition duration-300 ${bgSearch}`}
           onClick={() => { handleChoice('search') }}
         >
@@ -173,19 +173,19 @@ export default function AllItems() {
           <span className="text-sm text-center text-gray-400">Item não encontrado</span>
           {loggedUser ?
             <button
-              className="px-4 py-2 bg-green-500 text-white rounded hover:opacity-80"
+              className="px-4 py-1 bg-green-500 text-white rounded hover:opacity-80"
               onClick={() => setShowInsertItemModal(true)}
             >Adicionar</button>
             :
             <Link
-              className="px-4 py-2 bg-gray-100 text-gray-700 rounded hover:opacity-80"
+              className="px-4 py-1 bg-gray-100 text-gray-700 rounded hover:opacity-80"
               to="/signin"
             >Fazer Login</Link>
           }
         </div>
       }
       {(searchedValue.length > 0 || category !== "default") &&
-        <div id="items" className="max-h-120 overflow-auto rounded mt-4 border-b-4 border-t-4">
+        <div id="items" className="max-h-120 overflow-auto rounded mt-4 border-b-4 border-t-4 mb-6">
           {items.map((item, index) => {
 
             const itemDescription = item.description;

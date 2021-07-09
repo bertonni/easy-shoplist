@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { auth } from '../assets/firebase';
+import { auth, firebase } from '../assets/firebase';
 
 export const AuthContext = createContext({});
 
@@ -27,13 +27,17 @@ export function AuthContextProvider(props) {
       .catch((error) => setError(error.message));
   }
 
-  function signInWithEmail(email, password) {
-    auth.signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        if (userCredential.user) setLoggedUser(userCredential.user);
-        window.location.replace('/');
+  function signInWithEmail(email, password, keepSession) {
+    auth.setPersistence(keepSession ? firebase.auth.Auth.Persistence.LOCAL : firebase.auth.Auth.Persistence.SESSION)
+      .then(() => {
+        return auth.signInWithEmailAndPassword(email, password)
+          .then((userCredential) => {
+            if (userCredential.user) setLoggedUser(userCredential.user);
+            window.location.replace('/');
+          })
+          .catch((error) => setError(error.message));
       })
-      .catch((error) => setError(error.message));
+      .catch((error) => console.log(error.message))
   }
 
   function signOut() {

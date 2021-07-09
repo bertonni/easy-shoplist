@@ -39,14 +39,14 @@ export default function ModalAddToList({ item, updateList, closeModal }) {
               <div className="flex items-center justify-center gap-4 mt-3">
                 <button
                   type="submit"
-                  className="rounded focus:outline-none border border-gray-500 text-gray-700 px-4 py-2"
+                  className="rounded focus:outline-none border border-gray-500 text-gray-700 px-4 py-1"
                   onClick={(e) => saveItem(e)}
                 >
                   Salvar
                 </button>
                 <a
                   href="#/"
-                  className="rounded focus:outline-none border border-gray-500 text-gray-700 px-4 py-2"
+                  className="rounded focus:outline-none border border-gray-500 text-gray-700 px-4 py-1"
                   onClick={(e) => { e.preventDefault(); closeModal() }}
                 >
                   Cancelar

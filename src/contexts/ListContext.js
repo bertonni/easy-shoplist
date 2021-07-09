@@ -17,45 +17,33 @@ export function ListContextProvider({ children }) {
   const getList = useCallback(
     async () => {
       if (!loggedUser) return;
+
       const userList = [];
       await database.collection('lists').doc(`${loggedUser.uid}`).collection('list').get()
         .then((querySnapshot) => {
+          console.log('get list')
           querySnapshot.forEach((doc) => {
             userList.push(doc.data());
           })
         })
         .catch((error) => console.log(error.message));
+        userList.sort((a, b) => {
+          return a.category.localeCompare(b.category);
+        });
       setList(userList);
     },
     [loggedUser],
-  )
-
-  function getAllItems() {
-    const storage = JSON.parse(localStorage.getItem('items'));
-    if (!storage) {
-      database.collection('items').onSnapshot({ includeMetadataChanges: true }, (snapshot) => {
-        const newItems = [];
-        snapshot.docChanges().forEach((change) => {
-          if (change.type === "added") {
-            let newItem = { id: change.doc.id, ...change.doc.data() }
-            newItems.push(newItem);
-          }
-        });
-
-        newItems.sort((a, b) => {
-          return a.description.localeCompare(b.description);
-        })
-
-        localStorage.setItem('items', JSON.stringify(newItems));
-        setItems(newItems);
-      });
-    }
-  }
+  );
 
   useEffect(() => {
     if (loggedUser) localStorage.setItem(`list_${loggedUser.uid}`, JSON.stringify(list));
     return () => { }
   }, [list, loggedUser]);
+
+  useEffect(() => {
+    localStorage.setItem(`items`, JSON.stringify(items));
+    return () => { }
+  }, [items]);
 
   useEffect(() => {
     getList();
@@ -67,6 +55,37 @@ export function ListContextProvider({ children }) {
     return () => { }
   }, []);
 
+  function getAllItems() {
+    const storage = JSON.parse(localStorage.getItem('items')) ?? [];
+    if (storage.length === 0) {
+      const allItems = [];
+      database.collection('items').get()
+        .then((querySnapshot) => {
+          console.log(querySnapshot.forEach((doc) => {
+            console.log(doc.data());
+            allItems.push({ id: doc.id, ...doc.data() });
+          }));
+          allItems.sort((a, b) => {
+            return a.description.localeCompare(b.description);
+          });
+          console.log('pegou os dados do banco');
+          localStorage.setItem('items', JSON.stringify(allItems));
+          setItems(allItems);
+        })
+        .catch((error) => console.log(error.message));
+    }
+  }
+
+  function generateId(length) {
+    let result = '';
+    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  }
+
   function addSubtotal(index, item) {
     const newList = [...list];
     database.collection('lists').doc(`${loggedUser.uid}`).collection('list').doc(`${item.id}`).set(item)
@@ -77,26 +96,19 @@ export function ListContextProvider({ children }) {
     setList(newList);
   }
 
-  function insertItemIntoList(item, newItem) {
-    if (loggedUser) {
-      database.collection('lists').doc(`${loggedUser.uid}`).collection('list').doc(`${item.id}`).set(item)
-        .then(() => console.log('Item added to user list'))
-        .catch((error) => console.log(error.message));
+  function insertItemIntoList(item) {
+    if (!loggedUser) return;
+
+    const index = items.findIndex(val => val.description === item.description);
+
+    database.collection('lists').doc(`${loggedUser.uid}`).collection('list').doc(`${item.id}`).set(item)
+      .then(() => console.log('Item added to user list/items'))
+      .catch((error) => console.log(error.message));
+      
+    if (index < 0) {
+      setItems([...items, item]);
     }
     setList([...list, item]);
-    if (newItem) {
-      const itemToAdd = {
-        category: item.category,
-        description: item.description
-      }
-      const newItems = [...items, itemToAdd];
-      localStorage.setItem('items', JSON.stringify(newItems));
-      setItems([...items, itemToAdd]);
-
-      database.collection('items').add(itemToAdd)
-        .then(() => console.log('Item added to firebase'))
-        .catch((error) => console.log(error.message));
-    }
   }
 
   function updateItemOfList(item) {
@@ -108,7 +120,6 @@ export function ListContextProvider({ children }) {
     newList[index] = item;
     newList[index].price = item.price
 
-    console.log(item);
     database.collection('lists').doc(`${loggedUser.uid}`).collection('list').doc(`${item.id}`).update({
       quantity: item.quantity,
       price: item.price
@@ -130,10 +141,10 @@ export function ListContextProvider({ children }) {
       .catch((error) => console.error(error));
   }
 
-  function updateList(item, newItem = null) {
+  function updateList(item) {
     const index = list.findIndex(val => val.description === item.description);
 
-    if (index < 0) insertItemIntoList(item, newItem);
+    if (index < 0) insertItemIntoList(item);
     else updateItemOfList(item);
   }
 
@@ -158,6 +169,7 @@ export function ListContextProvider({ children }) {
         activePage,
         handleActivePage,
         updateList,
+        generateId,
         removeFromList,
         addSubtotal,
         clearList

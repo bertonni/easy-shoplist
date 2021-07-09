@@ -94,7 +94,7 @@ export default function Home() {
               )
             })}
           </div>
-          <div className="flex items-center mt-2 gap-3">
+          <div className="flex items-center mt-2 gap-3 mb-6">
             <span className="font-medium">SubTotal:</span>
             <span className="text-gray-400 font-semibold">R$ {subtotal.toFixed(2)}</span>
           </div>

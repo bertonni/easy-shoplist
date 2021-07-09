@@ -1,4 +1,8 @@
+import { useList } from "../hooks/useList";
+
 export default function ModalInsertItem({ updateList, categories, description, closeModal }) {
+
+  const { generateId } = useList();
 
   let desc = description.charAt(0).toUpperCase() + description.slice(1);
 
@@ -6,13 +10,14 @@ export default function ModalInsertItem({ updateList, categories, description, c
     e.preventDefault();
     
     const newItem = {
+      id: generateId(20),
       description: e.target.description.value,
       category: e.target.category.value,
-      quantity: Number(e.target.quantity.value),
-      price: 0,
+      quantity: e.target.quantity.value,
+      price: 0
     }
 
-    updateList(newItem, 'newItem');
+    updateList(newItem);
     closeModal();
   }
 
@@ -27,7 +32,7 @@ export default function ModalInsertItem({ updateList, categories, description, c
           <div className="flex flex-col gap-2">
             <form onSubmit={(e) => handleSubmit(e)}>
               <div className="flex gap-2">
-                <div className="flex flex-col">
+                <div className="flex flex-col flex-grow">
                   <label className="text-sm text-gray-500">Item:</label>
                   <input type="text"
                     defaultValue={desc}
@@ -35,7 +40,7 @@ export default function ModalInsertItem({ updateList, categories, description, c
                     className="rounded px-2 border h-10 w-full"
                   />
                 </div>
-                <div className="flex flex-col flex-1">
+                <div className="flex flex-col">
                   <label className="text-sm text-gray-500">Quantidade:</label>
                   <input type="number"
                     name="quantity"
@@ -52,7 +57,6 @@ export default function ModalInsertItem({ updateList, categories, description, c
                   className="h-10 rounded w-full border pl-2 text-gray-500"
                 >
                   <option value="default">Selecione</option>
-                  <option value="All">Todas as Categorias</option>
                   {categories.map((category, index) => {
                     return (
                       <option
@@ -69,13 +73,13 @@ export default function ModalInsertItem({ updateList, categories, description, c
               <div className="flex items-center justify-center gap-4 mt-3">
                 <button
                   type="submit"
-                  className="rounded focus:outline-none border border-gray-500 text-gray-700 px-4 py-2"
+                  className="rounded focus:outline-none border border-gray-500 text-gray-700 px-4 py-1"
                 >
                   Salvar
                 </button>
                 <a
                   href="#/"
-                  className="rounded focus:outline-none border border-gray-500 text-gray-700 px-4 py-2"
+                  className="rounded focus:outline-none border border-gray-500 text-gray-700 px-4 py-1"
                   onClick={(e) => { e.preventDefault(); closeModal() }}
                 >
                   Cancelar
